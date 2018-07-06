@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @app.name %>
+</p>
+
+<p>
+  <strong>Id android:</strong>
+  <%= @app.id_android %>
+</p>
+
+<p>
+  <strong>Id ios:</strong>
+  <%= @app.id_ios %>
+</p>
+
+<p>
+  <strong>Version:</strong>
+  <%= @app.version %>
+</p>
+
+<p>
+  <strong>Color primary:</strong>
+  <%= @app.color_primary %>
+</p>
+
+<p>
+  <strong>Color secondary:</strong>
+  <%= @app.color_secondary %>
+</p>
+
+<%= link_to 'Edit', edit_app_path(@app) %> |
+<%= link_to 'Back', apps_path %>
