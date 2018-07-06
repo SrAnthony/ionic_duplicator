@@ -31,4 +31,6 @@
 </p>
 
 <%= link_to 'Edit', edit_app_path(@app) %> |
-<%= link_to 'Back', apps_path %>
+<%= link_to 'Back', apps_path %> |
+<%= link_to 'Create Android App', create_app_path(@app, 'android'), remote: :true %> |
+<%= link_to 'Create iOS App', create_app_path(@app, 'ios'), remote: :true %>

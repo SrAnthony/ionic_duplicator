@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
   resources :apps
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get 'apps/create_app/:id/:platform', to: 'apps#create_app', as: :create_app
+
+  root 'apps#index'
 end
