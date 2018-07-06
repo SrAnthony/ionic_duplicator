@@ -1,1 +1,3 @@
-alert('Well done!');
+$('#results pre').html("<%= @cmd.inspect %>");
+$('#results').removeClass('hide');
+$('.ui.button').removeClass('loading')

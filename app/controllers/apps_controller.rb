@@ -64,13 +64,11 @@ class AppsController < ApplicationController
     file_names.each do |file_name|
       replace = app_gsub!(File.read(file_name))
 
-      # To write changes to the file, use:
+      # Escreve as mudanças no arquivo
       File.open(file_name, "w") {|file| file.puts replace }
     end
 
-    respond_to do |format|
-      format.js { render :create_app }
-    end
+    @cmd = `npm i`
   end
 
   private
