@@ -17,6 +17,11 @@
   </div>
 
   <div class="field">
+    <%= form.label :app_id %>
+    <%= form.text_field :app_id %>
+  </div>
+
+  <div class="field">
     <%= form.label :package_id %>
     <%= form.text_field :package_id %>
   </div>
@@ -27,8 +32,18 @@
   </div>
 
   <div class="field">
-    <%= form.label :app_id %>
-    <%= form.text_field :app_id %>
+    <%= form.label :icon %>
+    <%= form.file_field :icon %>
+  </div>
+
+  <div class="field">
+    <%= form.label :splash %>
+    <%= form.file_field :splash %>
+  </div>
+
+  <div class="field">
+    <%= form.label :logo %>
+    <%= form.file_field :logo %>
   </div>
 
   <div class="actions">

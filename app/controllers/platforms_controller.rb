@@ -21,10 +21,18 @@ class PlatformsController < ApplicationController
 
   def create
     @platform = Platform.new(platform_params)
+    icon = platform_params[:icon]
+    logo = platform_params[:logo]
+    splash = platform_params[:splash]
 
     respond_to do |format|
       if @platform.save
-        FolderService.new(@platform).create_app_folder
+
+        @platform.icon.attach(icon) if icon
+        @platform.logo.attach(logo) if logo
+        @platform.splash.attach(splash) if splash
+
+        FolderService.new(@platform, request.base_url)
         format.html { redirect_to @platform.app, notice: 'Platform was successfully created.' }
       else
         format.html { render :new }
@@ -57,6 +65,6 @@ class PlatformsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def platform_params
-      params.require(:platform).permit(:name, :package_id, :version, :app_id)
+      params.require(:platform).permit(:name, :package_id, :version, :app_id, :icon, :splash, :logo)
     end
 end

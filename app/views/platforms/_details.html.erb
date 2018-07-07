@@ -5,4 +5,17 @@
 <p>
   <strong>Version</strong><br>
   <%= platform.version %>
-</p> 
+</p>
+<p>
+  <strong>Icon</strong><br>
+  Link: <a href="<%= url_for(platform.icon) %>">Click</a><br>
+  <%= image_tag(url_for(platform.icon)) %>
+</p>
+<p>
+  <strong>Splash</strong><br>
+  <%= image_tag(url_for(platform.splash)) %>
+</p>
+<p>
+  <strong>Logo</strong><br>
+  <%= image_tag(url_for(platform.logo)) %>
+</p>
