@@ -2,7 +2,47 @@
 
 <h1>Apps</h1>
 
-<table>
+<div class="ui equal width left aligned padded grid stackable">
+  <% @apps.in_groups_of(4).each do |group| %>
+    <div class="doubling four column row">
+      <% group.each do |app| %>
+        <% next if app.nil? %>
+        <div class="column">
+          <div class="ui segment">
+            <div class="ui items">
+              <div class="item">
+                <div class="ui tiny circular image">
+                  <% if app.android&.logo&.attached? %>
+                    <%= image_tag url_for(app.android.logo) %>
+                  <% else %>
+                    <%= image_tag 'elliot' %>
+                  <% end %>
+                </div>
+                <div class="content">
+                  <a class="header"><%= app.name %></a>
+                  <div class="meta">
+                    <%= app.color_primary %> | <%= app.color_secondary %>
+                  </div>
+                  <div class="description">
+                    <p></p>
+                  </div>
+                  <div class="extra">
+                    <%= link_to app do %>
+                      <div class="ui blue label"><i class="eye icon"></i> Details</div>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+
+<!-- <table>
   <thead>
     <tr>
       <th>Name</th>
@@ -24,8 +64,4 @@
       </tr>
     <% end %>
   </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New App', new_app_path %>
+</table> -->
