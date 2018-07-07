@@ -6,9 +6,6 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Id android</th>
-      <th>Id ios</th>
-      <th>Version</th>
       <th>Color primary</th>
       <th>Color secondary</th>
       <th colspan="3"></th>
@@ -19,9 +16,6 @@
     <% @apps.each do |app| %>
       <tr>
         <td><%= app.name %></td>
-        <td><%= app.id_android %></td>
-        <td><%= app.id_ios %></td>
-        <td><%= app.version %></td>
         <td><%= app.color_primary %></td>
         <td><%= app.color_secondary %></td>
         <td><%= link_to 'Show', app %></td>

@@ -6,21 +6,6 @@
 </p>
 
 <p>
-  <strong>Id android:</strong>
-  <%= @app.id_android %>
-</p>
-
-<p>
-  <strong>Id ios:</strong>
-  <%= @app.id_ios %>
-</p>
-
-<p>
-  <strong>Version:</strong>
-  <%= @app.version %>
-</p>
-
-<p>
   <strong>Color primary:</strong>
   <%= @app.color_primary %>
 </p>
@@ -30,9 +15,28 @@
   <%= @app.color_secondary %>
 </p>
 
+<table>
+  <tr>
+    <th>Android</th>
+    <th>iOS</th>
+  </tr>
+  <tr>
+    <% if @app.android.present? %>
+      <td><%= render 'platforms/details', platform: @app.android %></td>
+    <% else %>
+      <td>Not created yet</td>
+    <% end %>
+    <% if @app.ios.present? %>
+      <td><%= render 'platforms/details', platform: @app.ios %></td>
+    <% else %>
+      <td>Not created yet</td>
+    <% end %>
+  </tr>
+</table>
+
 <div id="results" class="hide">
   <h3>Results</h3>
-  <pre></pre>
+  <pre class="code"></pre>
 </div>
 
 <%= link_to 'Edit', edit_app_path(@app), class: 'ui button' %> |

@@ -68,7 +68,7 @@ class AppsController < ApplicationController
       File.open(file_name, "w") {|file| file.puts replace }
     end
 
-    @cmd = `npm i`
+    @result = "App #{@app.name} for #{@platform} created successfully!"
   end
 
   private
