@@ -1,5 +1,5 @@
 class PlatformsController < ApplicationController
-  before_action :set_platform, only: [:show, :edit, :update, :destroy]
+  before_action :set_platform, only: [:show, :edit, :update, :destroy, :copy_images]
 
   def index
     @platforms = Platform.all
@@ -54,6 +54,13 @@ class PlatformsController < ApplicationController
     @platform.destroy
     respond_to do |format|
       format.html { redirect_to platforms_url, notice: 'Platform was successfully destroyed.' }
+    end
+  end
+
+  def copy_images
+    FolderService.new(@platform, request.base_url).copy_images
+    respond_to do |format|
+      format.html { redirect_to @platform.app, notice: 'Images saved!' }
     end
   end
 

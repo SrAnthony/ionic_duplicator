@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :platforms
   resources :apps
-  get 'apps/create_app/:id/:platform', to: 'apps#create_app', as: :create_app
+  get 'platforms/copy_images/:id', to: 'platforms#copy_images', as: :copy_images
 
   root 'apps#index'
 end

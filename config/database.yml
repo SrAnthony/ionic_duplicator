@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: IonicMaker_production
-  username: IonicMaker
-  password: <%= ENV['IONICMAKER_DATABASE_PASSWORD'] %>
+  username: root
+  password: root

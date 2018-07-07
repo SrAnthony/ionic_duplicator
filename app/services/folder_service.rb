@@ -9,7 +9,6 @@ class FolderService
     @app_path = "ionic/#{@platform.name}/#{@app.name}/"
 
     create_app_folder
-    copy_images
   end
 
   def app_gsub!(text)
@@ -35,12 +34,15 @@ class FolderService
   end
 
   def copy_images
-    icon_url = rails_blob_path(@platform.icon, only_path: true).gsub(/ /, '\ ')
-    splash_url = rails_blob_path(@platform.splash, only_path: true).gsub(/ /, '\ ')
-    logo_url = rails_blob_path(@platform.logo, only_path: true).gsub(/ /, '\ ')
+    icon_url = @host + rails_blob_path(@platform.icon, only_path: true)
+    splash_url = @host + rails_blob_path(@platform.splash, only_path: true)
+    logo_url = @host + rails_blob_path(@platform.logo, only_path: true)
 
-    a = `wget #{@host}#{icon_url} -P #{@app_path}`
-    a = `wget #{@host}#{splash_url} -P #{@app_path}`
-    a = `wget #{@host}#{logo_url} -P #{@app_path}`
+    puts '====================================='
+    puts "FROM: #{icon_url}, TO: #{@app_path.gsub(' ', '\ ')}"
+    puts '====================================='
+    a = `wget #{icon_url} -P #{@app_path.gsub(' ', '\ ')}`
+    a = `wget #{splash_url} -P #{@app_path.gsub(' ', '\ ')}`
+    a = `wget #{logo_url} -P #{@app_path.gsub(' ', '\ ')}`
   end
 end
