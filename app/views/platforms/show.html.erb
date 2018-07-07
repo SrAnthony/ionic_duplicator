@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @platform.name %>
+</p>
+
+<p>
+  <strong>Package:</strong>
+  <%= @platform.package_id %>
+</p>
+
+<p>
+  <strong>Version:</strong>
+  <%= @platform.version %>
+</p>
+
+<p>
+  <strong>App:</strong>
+  <%= @platform.app %>
+</p>
+
+<%= link_to 'Edit', edit_platform_path(@platform) %> |
+<%= link_to 'Back', platforms_path %>

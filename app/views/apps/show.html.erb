@@ -24,12 +24,16 @@
     <% if @app.android.present? %>
       <td><%= render 'platforms/details', platform: @app.android %></td>
     <% else %>
-      <td>Not created yet</td>
+      <td>
+        <%= link_to 'Create Android Platform', new_platform_path(name: 'android', app_id: @app.id) %>
+      </td>
     <% end %>
     <% if @app.ios.present? %>
       <td><%= render 'platforms/details', platform: @app.ios %></td>
     <% else %>
-      <td>Not created yet</td>
+      <td>
+        <%= link_to 'Create iOS Platform', new_platform_path(name: 'ios', app_id: @app.id) %>
+      </td>
     <% end %>
   </tr>
 </table>
@@ -39,7 +43,5 @@
   <pre class="code"></pre>
 </div>
 
-<%= link_to 'Edit', edit_app_path(@app), class: 'ui button' %> |
-<%= link_to 'Back', apps_path, class: 'ui button' %> |
-<%= link_to 'Create Android App', create_app_path(@app, 'android'), remote: :true, class: 'ui button will-load' %> |
-<%= link_to 'Create iOS App', create_app_path(@app, 'ios'), remote: :true, class: 'ui button will-load' %>
+<%= link_to 'Edit', edit_app_path(@app) %> |
+<%= link_to 'Back', apps_path %>

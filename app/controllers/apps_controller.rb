@@ -44,33 +44,6 @@ class AppsController < ApplicationController
     end
   end
 
-  def app_gsub!(text)
-    text.gsub!('<<app_version>>', @app.version)
-        .gsub!('<<app_name>>', @app.name)
-    text.gsub!('<<app_id>>', @app.id_android) if @platform == 'android'
-    text.gsub!('<<app_id>>', @app.id_ios)     if @platform == 'ios'
-    text
-  end
-
-  def create_app
-    @platform = params['platform'] # android || ios
-    recipe_path = 'ionic/recipe/'
-    app_path = "ionic/#{@platform}/#{@app.name}/"
-    file_names = [app_path + 'config.xml']
-
-    # Copia app receita para android/app.name
-    FileUtils.copy_entry recipe_path, app_path
-
-    file_names.each do |file_name|
-      replace = app_gsub!(File.read(file_name))
-
-      # Escreve as mudanças no arquivo
-      File.open(file_name, "w") {|file| file.puts replace }
-    end
-
-    @result = "App #{@app.name} for #{@platform} created successfully!"
-  end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_app
@@ -79,6 +52,6 @@ class AppsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def app_params
-      params.require(:app).permit(:name, :id_android, :id_ios, :version, :color_primary, :color_secondary)
+      params.require(:app).permit(:name, :color_primary, :color_secondary)
     end
 end
