@@ -7,6 +7,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= include_gon %>
   </head>
 
   <body>
@@ -67,12 +68,16 @@
             </g>
           </svg>
         </div>
-        <div class="item search-top">
+
+        <!-- Input de busca -->
+        <div class="ui search item search-top">
           <div class="ui left icon transparent inverted input">
             <i class="search link icon"></i>
-            <input type="text" placeholder="Search...">
+            <input type="text" class="prompt" placeholder="Search...">
           </div>
+          <div class="results"></div>
         </div>
+
       </div>
 
       <div class="main-content">

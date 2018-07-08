@@ -19,9 +19,19 @@
                   <% end %>
                 </div>
                 <div class="content">
-                  <a class="header"><%= app.name %></a>
-                  <div class="meta">
-                    <%= app.color_primary %> | <%= app.color_secondary %>
+                  <a class="header"><%= app.name %></a><br>
+                  <span class="package-id"><%= app.package_id %></span><br>
+                  <div class="meta platform-icons">
+                    <% if app.android.present? %>
+                      <%= link_to app.android, class: 'android' do %>
+                        <i class="android icon"></i> <%= app.android.version %>
+                      <% end %>
+                    <% end %>
+                    <% if app.ios.present? %>
+                      <%= link_to app.ios, class: 'ios' do %>
+                        <i class="apple icon"></i> <%= app.ios.version %>
+                      <% end %>
+                    <% end %>
                   </div>
                   <div class="description">
                     <p></p>

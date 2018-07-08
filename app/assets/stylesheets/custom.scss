@@ -86,3 +86,16 @@ body {
 img.cat {
   width: 300px;
 }
+
+.platform-icons {
+  .android {
+    color: green !important;
+  }
+  .ios {
+    color: darkslategray !important;
+  }
+}
+
+.content .package-id {
+  color: darkslategray;
+}

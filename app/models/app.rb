@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: apps
@@ -9,15 +11,21 @@
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #
-
+# Modelo APP
 class App < ApplicationRecord
   has_many :platforms, dependent: :destroy
 
   def android
-    self.platforms.where(name: 'android').first
+    platforms.where(name: 'android').first
   end
 
   def ios
-    self.platforms.where(name: 'ios').first
+    platforms.where(name: 'ios').first
+  end
+
+  def package_id
+    return android.package_id if android.present?
+    return ios.package_id if ios.present?
+    'No packages found'
   end
 end
