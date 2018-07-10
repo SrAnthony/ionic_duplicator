@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>IonicDuplicator</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= favicon_link_tag 'favicon-32x32.png' %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= include_gon %>
+
+</head>
+<body class="devise">
+
+  <!-- Notificações bonitas -->
+  <%= custom_toastr_flash %>
+
+  <div class="ui middle aligned center aligned grid">
+    <div class="column">
+
+      <%= yield %>
+
+    </div>
+  </div>
+
+</body>
+
+</html>

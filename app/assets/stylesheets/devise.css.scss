@@ -1,0 +1,14 @@
+body.devise {
+  background-image: image-url('chicago');
+  background-size: cover;
+
+  & > .grid {
+    height: 100%;
+  }
+  .column {
+    max-width: 450px;
+  }
+  .ui.teal.button {
+    background-color: #1ea3ff;
+  }
+}

@@ -80,18 +80,18 @@
           <div class="ui floating icon dropdown custom">
             <i class="user icon"></i>
             <div class="menu">
-              <div class="item">
+              <%= link_to edit_user_registration_path(current_user), class: 'item' do %>
                 <i class="user icon"></i>
                 My account
-              </div>
+              <% end %>
               <div class="item">
                 <i class="wrench icon"></i>
                 Admin center
               </div>
-              <div class="item">
+              <%= link_to destroy_user_session_path, method: :delete, class: 'item' do %>
                 <i class="sign out icon"></i>
                 Logout
-              </div>
+              <% end %>
             </div>
           </div>
         </div>
