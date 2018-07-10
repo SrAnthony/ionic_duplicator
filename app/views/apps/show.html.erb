@@ -5,6 +5,28 @@
     <%= @app.name %>
     <div class="sub header">
       <%= @app.color_primary %> | <%= @app.color_secondary %>
+
+      <div class="ui divider"></div>
+
+      <div class="ui labels">
+
+        <% if @app.updated? %>
+        <span class="ui green label">
+          <i class="check icon"></i>
+          Updated!
+        </span>
+        <% else %>
+        <span class="ui orange label">
+          <i class="warning sign icon"></i>
+          Outdated!
+        </span>
+        <% end %>
+
+        <%= link_to edit_app_path(@app), class: 'ui label' do %>
+        <i class="edit icon"></i>
+        Edit
+        <% end %>
+      </div>
     </div>
   </h2>
 </div>

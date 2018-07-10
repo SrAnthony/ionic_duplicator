@@ -12,13 +12,15 @@
 
 <%= form_with(model: @platform, local: true, class: 'ui tight form') do |form| %>
   <% if @platform.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@platform.errors.count, "error") %> prohibited this platform from being saved:</h2>
-
+    <div class="ui warning message" style="display: block;">
+      <i class="close icon"></i>
+      <div class="header">
+        Please verify your submission
+      </div>
       <ul>
-      <% @platform.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+          <% @platform.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
       </ul>
     </div>
   <% end %>
@@ -71,7 +73,7 @@
 
   <div class="actions">
     <%= form.submit 'Save Platform', class: 'ui positive button' %>
-    <%= link_to 'Cancel', platform_path(@platform), class: 'ui button' %>
+    <%= link_to 'Cancel', root_path, class: 'ui button' %>
   </div>
   <br><br>
 <% end %>

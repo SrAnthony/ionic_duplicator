@@ -11,6 +11,9 @@ class PlatformsController < ApplicationController
   end
 
   def new
+    if params['app_id'].nil?
+      return redirect_to root_path, alert: 'You cannot create a platform without an App'
+    end
     app = {
       name: params['name'] || '',
       app_id: params['app_id'] || ''
@@ -39,6 +42,7 @@ class PlatformsController < ApplicationController
         FolderService.new(@platform, request.base_url)
         format.html { redirect_to @platform, notice: 'Platform was successfully created.' }
       else
+        @app = App.find(@platform.app_id)
         format.html { render :new }
       end
     end

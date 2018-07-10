@@ -1,32 +1,49 @@
-<%= form_with(model: app, local: true) do |form| %>
-  <% if app.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(app.errors.count, "error") %> prohibited this app from being saved:</h2>
+<div class="app-show">
+  <%= image_tag @app.icon, class: 'ios-logo platform_icon' %>
 
+  <h2 class="ui center aligned header">
+    <span id="app-name-type"><%= @app.name || 'App Name' %></span>
+    <div class="sub header">
+      <span id="app-color-primary-type"><%= @app.color_primary || '#' %></span> |
+      <span id="app-color-secondary-type"><%= @app.color_secondary || '#' %></span>
+    </div>
+  </h2>
+</div>
+<br><br>
+
+<%= form_with(model: @app, local: true, class: 'ui tight form') do |form| %>
+  <% if @app.errors.any? %>
+    <div class="ui warning message" style="display: block;">
+      <i class="close icon"></i>
+      <div class="header">
+        Please verify your submission
+      </div>
       <ul>
-      <% app.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+          <% @app.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field text-center">
     <%= form.label :name %>
     <%= form.text_field :name %>
   </div>
 
-  <div class="field">
-    <%= form.label :color_primary %>
-    <%= form.text_field :color_primary %>
-  </div>
+  <div class="fields text-center">
+    <div class="eight wide field">
+      <%= form.label :color_primary %>
+      <%= form.text_field :color_primary %>
+    </div>
 
-  <div class="field">
-    <%= form.label :color_secondary %>
-    <%= form.text_field :color_secondary %>
+    <div class="eight wide field">
+      <%= form.label :color_secondary %>
+      <%= form.text_field :color_secondary %>
+    </div>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'Save App', class: 'ui positive button' %>
   </div>
 <% end %>

@@ -36,4 +36,8 @@ class App < ApplicationRecord
     return android.icon if android&.icon&.attached?
     'default'
   end
+
+  def updated?
+    true
+  end
 end
