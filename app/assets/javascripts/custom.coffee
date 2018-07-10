@@ -48,6 +48,12 @@ platform_tabs = ->
     $.tab('change tab', this.classList[3])
 # ========================================
 
+# Dropdowns do semantic
+dropdowns = ->
+  $('.ui.dropdown').dropdown()
+# ========================
+
 $(document).on 'turbolinks:load', platform_inputs
 $(document).on 'turbolinks:load', search_bar
 $(document).on 'turbolinks:load', platform_tabs
+$(document).on 'turbolinks:load', dropdowns
