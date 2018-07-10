@@ -13,6 +13,7 @@
 <br><br>
 
 <div class="ui stackable equal width grid">
+  <!-- Android -->
   <div class="center aligned column">
     <h3 class="ui icon header">
       <i class="android icon"></i>
@@ -24,11 +25,17 @@
     <div class="center aligned">
       <% if @app.android.present? %>
         <%= render 'platforms/details', platform: @app.android %>
+        <br>
+        <%= link_to edit_platform_path(@app.android), class: 'ui button' do %>
+          <i class="edit icon"></i> Edit
+        <% end %>
       <% else %>
         <%= link_to 'Create Android Platform', new_platform_path(app_id: @app.id, name: 'android') %>
       <% end %>
     </div>
   </div>
+
+  <!-- iOS -->
   <div class="center aligned column">
     <h3 class="ui icon header">
       <i class="apple icon"></i>
@@ -40,6 +47,10 @@
     <div class="center aligned">
       <% if @app.ios.present? %>
         <%= render 'platforms/details', platform: @app.ios %>
+        <br>
+        <%= link_to edit_platform_path(@app.ios), class: 'ui button' do %>
+          <i class="edit icon"></i> Edit
+        <% end %>
       <% else %>
         <%= link_to 'Create iOS Platform', new_platform_path(app_id: @app.id, name: 'ios') %>
       <% end %>

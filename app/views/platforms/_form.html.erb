@@ -1,8 +1,8 @@
 <div class="app-show">
-  <%= image_tag 'default', class: 'ios-logo platform_icon' %>
+  <%= image_tag @platform.icon_or_default, class: 'ios-logo platform_icon' %>
 
   <h2 class="ui center aligned header">
-    <%= @platform.name.capitalize %>
+    <%= @platform.name == 'android' ? 'Android' : 'iOS' %>
     <div class="sub header">
       New platform for <%= @app.name %>
     </div>
@@ -43,30 +43,29 @@
     </div>
   </div>
 
-  <%#= image_tag 'default', class: 'image_to_upload' %>
   <div class="three fields center aligned">
     <div class="field">
       <%= form.label :icon, class: 'text-center' do %>
         Icon
-        <%= image_tag 'default', class: 'platform_icon ui centered small rounded image' %>
+        <%= image_tag @platform.icon_or_default, class: 'platform_icon ui centered small rounded image' %>
       <% end %>
-      <%= form.file_field :icon, class: 'hide', required: true %>
+      <%= form.file_field :icon %>
     </div>
 
     <div class="field">
       <%= form.label :splash, class: 'text-center' do %>
         Splash
-        <%= image_tag 'default', class: 'platform_splash ui centered small rounded image' %>
+        <%= image_tag @platform.splash_or_default, class: 'platform_splash ui centered small rounded image' %>
       <% end %>
-      <%= form.file_field :splash, class: 'hide', required: true %>
+      <%= form.file_field :splash %>
     </div>
 
     <div class="field">
       <%= form.label :logo, class: 'text-center' do %>
         Logo
-        <%= image_tag 'default', class: 'platform_logo ui centered small rounded image' %>
+        <%= image_tag @platform.logo_or_default, class: 'platform_logo ui centered small rounded image' %>
       <% end %>
-      <%= form.file_field :logo, class: 'hide', required: true %>
+      <%= form.file_field :logo %>
     </div>
   </div>
 

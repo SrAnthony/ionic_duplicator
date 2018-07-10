@@ -21,4 +21,16 @@ class Platform < ApplicationRecord
   has_one_attached :icon
   has_one_attached :splash
   has_one_attached :logo
+
+  def icon_or_default
+    icon.attached? ? icon : 'default'
+  end
+
+  def splash_or_default
+    splash.attached? ? splash : 'default'
+  end
+
+  def logo_or_default
+    logo.attached? ? logo : 'default'
+  end
 end

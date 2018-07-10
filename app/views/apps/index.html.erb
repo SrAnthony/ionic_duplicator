@@ -12,11 +12,7 @@
             <div class="ui items">
               <div class="item">
                 <div class="ui tiny circular image">
-                  <% if app.android&.logo&.attached? %>
-                    <%= image_tag url_for(app.android.logo) %>
-                  <% else %>
-                    <%= image_tag 'elliot' %>
-                  <% end %>
+                  <%= image_tag app.icon %>
                 </div>
                 <div class="content">
                   <%= link_to app.name, app, class: 'header' %><br>
