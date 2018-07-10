@@ -1,0 +1,44 @@
+<div class="side-menu">
+  <nav>
+    <ul>
+      <li>
+        <div class="ui accordion">
+          <a class="ui title <%= current_class?('apps') %>">
+            <i class="mobile alternate icon"></i>
+            Applications
+          </a>
+          <div class="content <%= current_class?('apps') %>">
+            <div class="transition ">
+              <%= link_to apps_path, class: 'menu-link ' + current_class?('/apps') do %>
+                <i class="eye icon"></i>
+                View Apps
+              <% end %>
+              <%= link_to new_app_path, class: 'menu-link ' + current_class?('apps/new') do %>
+                <i class="plus icon"></i>
+                New App
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <a href="#">
+          <i class="cloud upload icon"></i>
+          Updates
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="file alternate outline icon"></i>
+          Changelogs
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="database icon"></i>
+          Assets
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>

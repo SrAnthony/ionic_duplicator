@@ -1,5 +1,6 @@
 module ApplicationHelper
   def current_class?(path)
+    return request.path == path ? 'active' : '' if path == '/apps'
     request.path.include?(path) ? 'active' : ''
   end
 
