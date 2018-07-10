@@ -34,35 +34,65 @@
 </div>
 <br><br>
 
-<div class="ui equal width center aligned grid tight">
+<div class="ui equal width center aligned grid tight tabs">
   <div class="column">
-    <%= link_to signing_path(@platform) do %>
+    <a class="link">
       <h3 class="ui icon header signing">
         <i class="key icon"></i>
         <div class="content">
           Signing
         </div>
       </h3>
-    <% end %>
+    </a>
   </div>
   <div class="column">
-    <%= link_to files_path(@platform) do %>
+    <a class="link">
       <h3 class="ui icon header files">
         <i class="folder icon"></i>
         <div class="content">
           Files
         </div>
       </h3>
-    <% end %>
+    </a>
   </div>
   <div class="column">
-    <%= link_to update_path(@platform) do %>
+    <a class="link">
       <h3 class="ui icon header update">
         <i class="cloud upload icon"></i>
         <div class="content">
           Update
         </div>
       </h3>
-    <% end %>
+    </a>
+  </div>
+</div>
+
+<div class="ui hidden divider"></div>
+
+<div class="ui transition fade in tab" data-tab="signing">
+  <h4 class="ui horizontal divider header signing-tab">
+    <i class="key icon"></i>
+    Signing
+  </h4>
+  <div class="tight">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  </div>
+</div>
+<div class="ui transition fade in tab" data-tab="files">
+  <h4 class="ui horizontal divider header files-tab">
+    <i class="folder icon"></i>
+    Files
+  </h4>
+  <div class="tight">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  </div>
+</div>
+<div class="ui transition fade in tab" data-tab="update">
+  <h4 class="ui horizontal divider header update-tab">
+    <i class="cloud upload icon"></i>
+    Update
+  </h4>
+  <div class="tight">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
   </div>
 </div>

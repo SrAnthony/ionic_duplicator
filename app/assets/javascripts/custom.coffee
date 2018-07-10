@@ -39,5 +39,15 @@ platform_inputs = ->
     reader.readAsDataURL(input.files[0])
 # ==========================================================
 
+# Tabs do platforms/show
+platform_tabs = ->
+  tabs = $('.signing, .files, .update')
+  tabs.on 'click', () ->
+    tabs.removeClass('active')
+    $(this).addClass('active')
+    $.tab('change tab', this.classList[3])
+# ========================================
+
 $(document).on 'turbolinks:load', platform_inputs
 $(document).on 'turbolinks:load', search_bar
+$(document).on 'turbolinks:load', platform_tabs

@@ -1,5 +1,5 @@
 module ApplicationHelper
-  def current_class?(test_path)
-    request.path == test_path ? 'active' : ''
+  def current_class?(path)
+    request.path.include?(path) ? 'active' : ''
   end
 end

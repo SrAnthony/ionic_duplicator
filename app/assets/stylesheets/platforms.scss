@@ -1,3 +1,47 @@
-// Place all the styles related to the Platforms controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+img.cat {
+  width: 300px;
+}
+
+.platform-icons {
+  .android {
+    color: green !important;
+  }
+  .ios {
+    color: darkslategray !important;
+  }
+}
+
+.content .package-id {
+  color: darkslategray;
+}
+
+.app-show {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+
+  .ios-logo {
+    width: 150px;
+    border-radius: 30px;
+  }
+}
+
+.signing, .signing-tab {
+  &:hover, &.active, &.divider {
+    color: goldenrod;
+    transition: ease-in-out .2s;
+  }
+}
+.files, .files-tab {
+  &:hover, &.active, &.divider {
+    color: darkolivegreen;
+    transition: ease-in-out .2s;
+  }
+}
+.update, .update-tab {
+  &:hover, &.active, &.divider {
+    color: steelblue;
+    transition: ease-in-out .2s;
+  }
+}
