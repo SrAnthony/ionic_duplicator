@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :apps
 
+  # Cria lista de todos os apps para usar no input de pesquisa
   def apps
     apps_search = []
     App.all.each do |app|

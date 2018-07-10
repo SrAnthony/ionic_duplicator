@@ -36,6 +36,7 @@ body {
         &:hover, &.active {
           color:inherit;
           background-color: rgba(0,0,0,0.03);
+          border-left: 3px #219aff solid;
         }
       }
     }
@@ -98,4 +99,16 @@ img.cat {
 
 .content .package-id {
   color: darkslategray;
+}
+
+.app-show {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+
+  .ios-logo {
+    width: 150px;
+    border-radius: 30px;
+  }
 }

@@ -1,23 +1,12 @@
 <p>
-  <strong>Package ID</strong><br>
   <%= platform.package_id %>
 </p>
 <p>
-  <strong>Version</strong><br>
   <%= platform.version %>
 </p>
-<p>
-  <a href="<%= copy_images_path(platform) %>">Copy images</a>
-</p>
-<p>
-  <strong>Icon</strong><br>
-  <%= image_tag(url_for(platform.icon), class: 'cat') %>
-</p>
-<p>
-  <strong>Splash</strong><br>
-  <%= image_tag(url_for(platform.splash), class: 'cat') %>
-</p>
-<p>
-  <strong>Logo</strong><br>
-  <%= image_tag(url_for(platform.logo), class: 'cat') %>
-</p>
+
+<div class="ui small images">
+  <%= image_tag(url_for(platform.icon), class: 'ui rounded image') if platform.icon.attached? %>
+  <%= image_tag(url_for(platform.splash), class: 'ui rounded image') if platform.splash.attached? %>
+  <%= image_tag(url_for(platform.logo), class: 'ui rounded image') if platform.logo.attached? %>
+</div>

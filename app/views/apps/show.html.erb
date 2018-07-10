@@ -1,47 +1,48 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @app.name %>
-</p>
+<div class="app-show">
+  <%= image_tag @app.icon, class: 'ios-logo' %>
 
-<p>
-  <strong>Color primary:</strong>
-  <%= @app.color_primary %>
-</p>
-
-<p>
-  <strong>Color secondary:</strong>
-  <%= @app.color_secondary %>
-</p>
-
-<table>
-  <tr>
-    <th>Android</th>
-    <th>iOS</th>
-  </tr>
-  <tr>
-    <% if @app.android.present? %>
-      <td><%= render 'platforms/details', platform: @app.android %></td>
-    <% else %>
-      <td>
-        <%= link_to 'Create Android Platform', new_platform_path(name: 'android', app_id: @app.id) %>
-      </td>
-    <% end %>
-    <% if @app.ios.present? %>
-      <td><%= render 'platforms/details', platform: @app.ios %></td>
-    <% else %>
-      <td>
-        <%= link_to 'Create iOS Platform', new_platform_path(name: 'ios', app_id: @app.id) %>
-      </td>
-    <% end %>
-  </tr>
-</table>
-
-<div id="results" class="hide">
-  <h3>Results</h3>
-  <pre class="code"></pre>
+  <h2 class="ui center aligned header">
+    <%= @app.name %>
+    <div class="sub header">
+      <%= @app.color_primary %> | <%= @app.color_secondary %>
+    </div>
+  </h2>
 </div>
+<br><br>
 
-<%= link_to 'Edit', edit_app_path(@app) %> |
-<%= link_to 'Back', apps_path %>
+<div class="ui stackable equal width grid">
+  <div class="center aligned column">
+    <h3 class="ui icon header">
+      <i class="android icon"></i>
+      <div class="content">
+        Android
+      </div>
+    </h3>
+
+    <div class="center aligned">
+      <% if @app.android.present? %>
+        <%= render 'platforms/details', platform: @app.android %>
+      <% else %>
+        <%= link_to 'Create Android Platform', new_platform_path(app_id: @app.id, name: 'android') %>
+      <% end %>
+    </div>
+  </div>
+  <div class="center aligned column">
+    <h3 class="ui icon header">
+      <i class="apple icon"></i>
+      <div class="content">
+        iOS
+      </div>
+    </h3>
+
+    <div class="center aligned">
+      <% if @app.ios.present? %>
+        <%= render 'platforms/details', platform: @app.ios %>
+      <% else %>
+        <%= link_to 'Create iOS Platform', new_platform_path(app_id: @app.id, name: 'ios') %>
+      <% end %>
+    </div>
+  </div>
+</div>

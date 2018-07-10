@@ -19,7 +19,7 @@
                   <% end %>
                 </div>
                 <div class="content">
-                  <a class="header"><%= app.name %></a><br>
+                  <%= link_to app.name, app, class: 'header' %><br>
                   <span class="package-id"><%= app.package_id %></span><br>
                   <div class="meta platform-icons">
                     <% if app.android.present? %>
@@ -31,14 +31,6 @@
                       <%= link_to app.ios, class: 'ios' do %>
                         <i class="apple icon"></i> <%= app.ios.version %>
                       <% end %>
-                    <% end %>
-                  </div>
-                  <div class="description">
-                    <p></p>
-                  </div>
-                  <div class="extra">
-                    <%= link_to app do %>
-                      <div class="ui blue label"><i class="eye icon"></i> Details</div>
                     <% end %>
                   </div>
                 </div>

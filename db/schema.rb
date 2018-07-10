@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_07_171545) do
+ActiveRecord::Schema.define(version: 2018_07_08_215227) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -39,6 +39,8 @@ ActiveRecord::Schema.define(version: 2018_07_07_171545) do
     t.string "color_secondary"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "short_description"
+    t.text "long_description"
   end
 
   create_table "platforms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -48,6 +50,7 @@ ActiveRecord::Schema.define(version: 2018_07_07_171545) do
     t.bigint "app_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "version_code"
     t.index ["app_id"], name: "index_platforms_on_app_id"
   end
 

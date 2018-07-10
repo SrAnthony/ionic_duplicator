@@ -1,5 +1,5 @@
 {
-  "name": "IonicMaker",
+  "name": "IonicDuplicator",
   "private": true,
   "dependencies": {
     "sweetalert": "^2.1.0"

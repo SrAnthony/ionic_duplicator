@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>IonicMaker</title>
+    <title>IonicDuplicator</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <%= favicon_link_tag 'favicon-32x32.png' %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= include_gon %>
@@ -18,25 +19,25 @@
             <li>
               <a href="<%= apps_path %>" class="<%= current_class?(apps_path) %>">
                 <i class="mobile alternate icon"></i>
-                Aplicativos
+                Applications
               </a>
             </li>
             <li>
               <a href="<%= platforms_path %>" class="<%= current_class?(platforms_path) %>">
                 <i class="telegram plane icon"></i>
-                Plataformas
+                Platforms
               </a>
             </li>
             <li>
               <a href="#">
                 <i class="cloud upload icon"></i>
-                Update
+                Updates
               </a>
             </li>
             <li>
               <a href="#">
                 <i class="file alternate outline icon"></i>
-                Changelog
+                Changelogs
               </a>
             </li>
             <li>
