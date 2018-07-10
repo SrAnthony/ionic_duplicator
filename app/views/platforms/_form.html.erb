@@ -1,52 +1,76 @@
-<%= form_with(model: platform, local: true) do |form| %>
-  <% if platform.errors.any? %>
+<div class="app-show">
+  <%= image_tag 'default', class: 'ios-logo platform_icon' %>
+
+  <h2 class="ui center aligned header">
+    <%= @platform.name.capitalize %>
+    <div class="sub header">
+      New platform for <%= @app.name %>
+    </div>
+  </h2>
+</div>
+<br><br>
+
+<%= form_with(model: @platform, local: true, class: 'ui tight form') do |form| %>
+  <% if @platform.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(platform.errors.count, "error") %> prohibited this platform from being saved:</h2>
+      <h2><%= pluralize(@platform.errors.count, "error") %> prohibited this platform from being saved:</h2>
 
       <ul>
-      <% platform.errors.full_messages.each do |message| %>
+      <% @platform.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <%= form.hidden_field :name %>
+  <%= form.hidden_field :app_id %>
+
+  <div class="fields">
+    <div class="required eight wide field">
+      <%= form.label :package_id %>
+      <%= form.text_field :package_id, placeholder: 'com.company.appname', required: true %>
+    </div>
+
+    <div class="required four wide field">
+      <%= form.label :version %>
+      <%= form.text_field :version, placeholder: '1.0.0', required: true %>
+    </div>
+
+    <div class="required four wide field">
+      <%= form.label :version_code %>
+      <%= form.text_field :version_code, placeholder: '10000', required: true %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :app_id %>
-    <%= form.text_field :app_id %>
-  </div>
+  <%#= image_tag 'default', class: 'image_to_upload' %>
+  <div class="three fields center aligned">
+    <div class="field">
+      <%= form.label :icon, class: 'text-center' do %>
+        Icon
+        <%= image_tag 'default', class: 'platform_icon ui centered small rounded image' %>
+      <% end %>
+      <%= form.file_field :icon, class: 'hide', required: true %>
+    </div>
 
-  <div class="field">
-    <%= form.label :package_id %>
-    <%= form.text_field :package_id %>
-  </div>
+    <div class="field">
+      <%= form.label :splash, class: 'text-center' do %>
+        Splash
+        <%= image_tag 'default', class: 'platform_splash ui centered small rounded image' %>
+      <% end %>
+      <%= form.file_field :splash, class: 'hide', required: true %>
+    </div>
 
-  <div class="field">
-    <%= form.label :version %>
-    <%= form.text_field :version %>
-  </div>
-
-  <div class="field">
-    <%= form.label :icon %>
-    <%= form.file_field :icon %>
-  </div>
-
-  <div class="field">
-    <%= form.label :splash %>
-    <%= form.file_field :splash %>
-  </div>
-
-  <div class="field">
-    <%= form.label :logo %>
-    <%= form.file_field :logo %>
+    <div class="field">
+      <%= form.label :logo, class: 'text-center' do %>
+        Logo
+        <%= image_tag 'default', class: 'platform_logo ui centered small rounded image' %>
+      <% end %>
+      <%= form.file_field :logo, class: 'hide', required: true %>
+    </div>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: 'ui positive button' %>
   </div>
 <% end %>

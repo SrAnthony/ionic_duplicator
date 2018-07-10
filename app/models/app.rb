@@ -33,6 +33,6 @@ class App < ApplicationRecord
   def icon
     return ios.icon if ios&.icon&.attached?
     return android.icon if android&.icon&.attached?
-    'elliot'
+    'default'
   end
 end

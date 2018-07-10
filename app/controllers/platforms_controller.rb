@@ -13,6 +13,7 @@ class PlatformsController < ApplicationController
       name: params['name'] || '',
       app_id: params['app_id'] || ''
     }
+    @app = App.find(params['app_id'])
     @platform = Platform.new(app)
   end
 
