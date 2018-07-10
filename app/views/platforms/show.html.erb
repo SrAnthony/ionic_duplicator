@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <div class="app-show">
   <%= image_tag @platform.icon_or_default, class: 'ios-logo platform_icon' %>
 
@@ -26,6 +24,11 @@
             <i class="warning sign icon"></i>
             Outdated!
           </span>
+        <% end %>
+
+        <%= link_to edit_platform_path(@platform), class: 'ui label' do %>
+          <i class="edit icon"></i>
+          Edit
         <% end %>
       </div>
 

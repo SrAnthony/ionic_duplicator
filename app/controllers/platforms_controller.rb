@@ -36,7 +36,7 @@ class PlatformsController < ApplicationController
         @platform.splash.attach(splash) if splash
 
         FolderService.new(@platform, request.base_url)
-        format.html { redirect_to @platform.app, notice: 'Platform was successfully created.' }
+        format.html { redirect_to @platform, notice: 'Platform was successfully created.' }
       else
         format.html { render :new }
       end
@@ -46,7 +46,7 @@ class PlatformsController < ApplicationController
   def update
     respond_to do |format|
       if @platform.update(platform_params)
-        format.html { redirect_to @platform.app, notice: 'Platform was successfully updated.' }
+        format.html { redirect_to @platform, notice: 'Platform was successfully updated.' }
       else
         format.html { render :edit }
       end

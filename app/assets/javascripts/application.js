@@ -16,4 +16,5 @@
 //= require jquery3
 //= require semantic-ui
 //= require sweetalert/dist/sweetalert.min.js
+//= require toastr
 //= require_tree .
