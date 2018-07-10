@@ -3,9 +3,9 @@
 # Table name: apps
 #
 #  id                :bigint(8)        not null, primary key
-#  name              :string(255)
-#  color_primary     :string(255)
-#  color_secondary   :string(255)
+#  name              :string(255)      not null
+#  color_primary     :string(255)      not null
+#  color_secondary   :string(255)      not null
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
 #  short_description :string(255)

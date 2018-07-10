@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_10_070222) do
+ActiveRecord::Schema.define(version: 2018_07_10_075820) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -34,9 +34,9 @@ ActiveRecord::Schema.define(version: 2018_07_10_070222) do
   end
 
   create_table "apps", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
-    t.string "color_primary"
-    t.string "color_secondary"
+    t.string "name", null: false
+    t.string "color_primary", null: false
+    t.string "color_secondary", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "short_description"
@@ -44,13 +44,13 @@ ActiveRecord::Schema.define(version: 2018_07_10_070222) do
   end
 
   create_table "platforms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
-    t.string "package_id"
-    t.string "version"
-    t.bigint "app_id"
+    t.string "name", null: false
+    t.string "package_id", null: false
+    t.string "version", null: false
+    t.bigint "app_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "version_code"
+    t.integer "version_code", null: false
     t.index ["app_id"], name: "index_platforms_on_app_id"
   end
 

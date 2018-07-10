@@ -4,9 +4,9 @@
 # Table name: apps
 #
 #  id                :bigint(8)        not null, primary key
-#  name              :string(255)
-#  color_primary     :string(255)
-#  color_secondary   :string(255)
+#  name              :string(255)      not null
+#  color_primary     :string(255)      not null
+#  color_secondary   :string(255)      not null
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
 #  short_description :string(255)
@@ -15,6 +15,7 @@
 
 class App < ApplicationRecord
   has_many :platforms, dependent: :destroy
+  validates :name, :color_primary, :color_secondary, presence: true
 
   def android
     platforms.where(name: 'android').first
