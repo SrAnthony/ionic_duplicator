@@ -4,7 +4,7 @@
   <h2 class="ui center aligned header">
     <%= @platform.name == 'android' ? 'Android' : 'iOS' %>
     <div class="sub header">
-      New platform for <%= @app.name %>
+      Platform for <%= @app.name %>
     </div>
   </h2>
 </div>
@@ -70,6 +70,8 @@
   </div>
 
   <div class="actions">
-    <%= form.submit class: 'ui positive button' %>
+    <%= form.submit 'Save Platform', class: 'ui positive button' %>
+    <%= link_to 'Cancel', platform_path(@platform), class: 'ui button' %>
   </div>
+  <br><br>
 <% end %>

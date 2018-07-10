@@ -33,4 +33,8 @@ class Platform < ApplicationRecord
   def logo_or_default
     logo.attached? ? logo : 'default'
   end
+
+  def updated?
+    true
+  end
 end

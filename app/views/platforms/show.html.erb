@@ -1,25 +1,68 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @platform.name %>
-</p>
+<div class="app-show">
+  <%= image_tag @platform.icon_or_default, class: 'ios-logo platform_icon' %>
 
-<p>
-  <strong>Package:</strong>
-  <%= @platform.package_id %>
-</p>
+  <h2 class="ui center aligned header">
+    <%= @app.name %>
+    <div class="sub header">
+      <i class="<%= @platform.name == 'android' ? 'android' : 'apple' %> icon"></i>
+      <%= @platform.package_id %>
+      <div class="ui divider"></div>
 
-<p>
-  <strong>Version:</strong>
-  <%= @platform.version %>
-</p>
+      <div class="ui labels">
+        <span class="ui blue label">
+          <i class="tag icon"></i>
+          <%= @platform.version %>
+        </span>
 
-<p>
-  <strong>App:</strong>
-  <%= @platform.app %>
-</p>
+        <% if @platform.updated? %>
+          <span class="ui green label">
+            <i class="check icon"></i>
+            Updated!
+          </span>
+        <% else %>
+          <span class="ui orange label">
+            <i class="warning sign icon"></i>
+            Outdated!
+          </span>
+        <% end %>
+      </div>
 
-<%= link_to 'Edit', edit_platform_path(@platform) %> |
-<%= link_to 'Platforms', platforms_path %>
-<%= link_to 'Apps', apps_path %>
+    </div>
+  </h2>
+</div>
+<br><br>
+
+<div class="ui equal width center aligned grid tight">
+  <div class="column">
+    <%= link_to signing_path(@platform) do %>
+      <h3 class="ui icon header signing">
+        <i class="key icon"></i>
+        <div class="content">
+          Signing
+        </div>
+      </h3>
+    <% end %>
+  </div>
+  <div class="column">
+    <%= link_to files_path(@platform) do %>
+      <h3 class="ui icon header files">
+        <i class="folder icon"></i>
+        <div class="content">
+          Files
+        </div>
+      </h3>
+    <% end %>
+  </div>
+  <div class="column">
+    <%= link_to update_path(@platform) do %>
+      <h3 class="ui icon header update">
+        <i class="cloud upload icon"></i>
+        <div class="content">
+          Update
+        </div>
+      </h3>
+    <% end %>
+  </div>
+</div>

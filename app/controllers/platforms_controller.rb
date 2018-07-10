@@ -6,6 +6,7 @@ class PlatformsController < ApplicationController
   end
 
   def show
+    @app = @platform.app
   end
 
   def new

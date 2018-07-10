@@ -82,6 +82,7 @@ body {
   margin-left: $sidebar-width;
   margin-top: $topbar-height;
   padding: 20px;
+  padding-bottom: 0;
 }
 
 img.cat {
@@ -113,10 +114,25 @@ img.cat {
   }
 }
 
-.ui.tight.form {
-  padding: 0 150px;
+.tight {
+  // padding: 0 150px;
+  max-width: 760px !important;
+  margin: 0 auto !important;
 }
 
 .text-center {
   text-align: center;
+}
+
+.signing:hover {
+  color: goldenrod;
+  transition: ease-in-out .2s;
+}
+.files:hover {
+  color: darkolivegreen;
+  transition: ease-in-out .2s;
+}
+.update:hover {
+  color: steelblue;
+  transition: ease-in-out .2s;
 }
