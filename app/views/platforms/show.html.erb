@@ -1,10 +1,16 @@
 <div class="app-show">
-  <%= image_tag @platform.icon_or_default, class: 'ios-logo platform_icon' %>
+  <div class="ui image">
+    <div class="ui blue right ribbon label">
+      <i class="<%= @platform.name_icon %> icon"></i>
+      <%= @platform.beauty_name %>
+    </div>
+    <%= image_tag @platform.icon_or_default, class: 'ios-logo platform_icon' %>
+  </div>
 
   <h2 class="ui center aligned header">
     <%= @app.name %>
     <div class="sub header">
-      <i class="<%= @platform.name == 'android' ? 'android' : 'apple' %> icon"></i>
+      <i class="<%= @platform.name_icon %> icon"></i>
       <%= @platform.package_id %>
       <div class="ui divider"></div>
 

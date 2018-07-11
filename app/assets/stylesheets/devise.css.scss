@@ -11,4 +11,19 @@ body.devise {
   .ui.teal.button {
     background-color: #1ea3ff;
   }
+  .inverted.header {
+    text-shadow: 0 1px 30px black;
+  }
+  .ui.stacked.segment {
+    background-color: rgba(255,255,255,0.85);
+  }
+  .ui.inverted.form {
+    .field span, .field em, .field label {
+      color: white;
+      text-shadow: 0 1px 20px black;
+    }
+    input:not(.button) {
+      background-color: rgba(255,255,255,0.85);
+    }
+  }
 }

@@ -1,9 +1,12 @@
 <p>
   <%= platform.package_id %>
 </p>
-<p>
-  <%= platform.version %> | <%= platform.version_code %>
-</p>
+<div class="ui labels">
+  <span class="ui blue label">
+    <i class="tag icon"></i>
+    v<%= platform.version %>
+  </span>
+</div>
 
 <div class="ui small images">
   <%= image_tag(url_for(platform.icon), class: 'ui rounded image') if platform.icon.attached? %>

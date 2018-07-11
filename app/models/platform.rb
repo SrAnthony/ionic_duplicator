@@ -36,4 +36,13 @@ class Platform < ApplicationRecord
   def updated?
     true
   end
+
+  def beauty_name
+    name == 'android' ? 'Android' : 'iOS'
+  end
+
+  # Para usar como ícones do semantic
+  def name_icon
+    name == 'android' ? 'android' : 'apple'
+  end
 end
