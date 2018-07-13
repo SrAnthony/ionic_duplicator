@@ -22,15 +22,15 @@ class Platform < ApplicationRecord
   validates :name, :package_id, :version, :app_id, :version_code, presence: true
 
   def icon_or_default
-    icon.attached? ? icon : 'default'
+    icon.attached? ? icon : 'default.png'
   end
 
   def splash_or_default
-    splash.attached? ? splash : 'default'
+    splash.attached? ? splash : 'default.png'
   end
 
   def logo_or_default
-    logo.attached? ? logo : 'default'
+    logo.attached? ? logo : 'default.png'
   end
 
   def updated?
