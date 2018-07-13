@@ -1,6 +1,6 @@
 // Variáveis
-$sidebar-width: 250px;
-$topbar-height: 55px;
+$sidebar-width: 220px;
+$topbar-height: 50px;
 // =========
 
 body {
@@ -37,6 +37,7 @@ body {
           color:inherit;
           background-color: rgba(0,0,0,0.05);
           border-left: 3px #219aff solid;
+          box-shadow: 0px 2px 22px -9px rgba(0,0,0,0.3);
         }
       }
     }
@@ -101,7 +102,7 @@ body {
     }
 
     .ui.floating.dropdown.custom > .menu {
-      margin-top: 18px !important;
+      margin-top: 15px !important;
       border-radius: 0px !important;
       box-shadow: none !important;
       border: none !important;
